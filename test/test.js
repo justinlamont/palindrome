@@ -20,7 +20,7 @@ describe("Phrase", function() {
         it("should return true for a mixed-case palindrome", function() {
 
             let mixedCase = new Phrase("RaceCar");
-            assert(mixedPalindrome.palindrome());
+            assert(mixedCase.palindrome());
         });
 
         it("should return true for a palindrome with punctuation");
