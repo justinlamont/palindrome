@@ -14,7 +14,7 @@ function Phrase(content) {
     // Returns content processed for palindrome testing.
     this.processedContent = function processedContent() {
         
-        return this.content.toLowerCase();
+        return this.letters().toLowerCase();
     }
 
     // Returns the letters in the content.
@@ -22,15 +22,17 @@ function Phrase(content) {
         
         let theLetters = [];
 
-        for (let i = 0; i < this.content.length; i++) {
+        const letterRegex = /[a-z]/i;
 
-            if (this.content.charAt(i).match(/[a-zA-Z]/)) {
+        Array.from(this.content).forEach(function(character) {
 
-                theLetters.puch(this.content.charAt(i));
+            if (character.match(letterRegex)) {
+
+                theLetters.push(character);
             }
-        }
+        });
         
-        return this.content; // stub return value
+        return theLetters.join("");
     }
 
     // Returns true if the phrase is a palindrome, false otherwise.
